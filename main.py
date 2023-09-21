@@ -9,10 +9,10 @@ app = Flask(__name__)
 api=Api(app)
 
 
-client=MongoClient("localhost",27017)
+client=MongoClient("mongodb+srv://Affanmd:AffanMd@cluster0.fem0x.mongodb.net/?retryWrites=true&w=majority")
 db=client["corider"]
 usersList=db.users
-
+print("started")
 #request for get all users
 class GetUser(Resource):
     def get(self):
@@ -84,4 +84,4 @@ api.add_resource(DelelteUser,'/user/<string:id>')
 
 
 if __name__ =='__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=5000)
