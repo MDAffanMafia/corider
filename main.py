@@ -9,7 +9,7 @@ app = Flask(__name__)
 api=Api(app)
 
 
-client=MongoClient("mongodb+srv://Affanmd:AffanMd@cluster0.fem0x.mongodb.net/?retryWrites=true&w=majority")
+client=MongoClient("mongodburl")
 db=client["corider"]
 usersList=db.users
 print("started")
