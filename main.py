@@ -12,6 +12,9 @@ api=Api(app)
 client=MongoClient("mongodb+srv://Affanmd:AffanMd@cluster0.fem0x.mongodb.net/?retryWrites=true&w=majority")
 db=client["corider"]
 usersList=db.users
+check=usersList.find({"name":"rohan"})
+for post in usersList.find({"name": "rohan"}):
+    print(post)
 print("started")
 #request for get all users
 class GetUser(Resource):
